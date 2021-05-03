@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
 
+  <!-- Mapbox Installation-->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
   <!--D3 cdn-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
 
@@ -17,8 +21,15 @@
 
 <body>
   <!-- The div where we will inject our map -->
-  <div id="map"></div>
-  
+  <div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoidGptLXRnYyIsImEiOiJja283d3BlcDUwYW0zMndsazl2bnVnczB5In0.l26EgCcrRbGBk9ZmxmCeUw';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+</script>
+
   <!-- Our JS -->
   <script type="text/javascript" src="logic.js"></script>
 </body>
